@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -6,6 +7,8 @@ const passport = require("./passport/passporthandler");
 const config = require("./config.prod");
 
 const app = express();
+
+app.use(express.static(path.resolve(__dirname, "public")));
 
 app.set("view engine", "hbs");
 

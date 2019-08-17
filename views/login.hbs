@@ -6,25 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="/style/login.css">
 </head>
 
 <body>
-    <form method="POST" action="/auth/login">
-        <input type="email" name="email" placeholder="Email" />
-        <br>
-        {{#if error.email}}
-        <div>{{error.email}}</div>
-        {{/if}}
-        <input type="password" name="password" placeholder="Password" />
-        <br>
-        {{#if error.password}}
-        <div>{{error.password}}</div>
-        {{/if}}
-        <input type="submit">
-    </form>
-    <a href="/auth/google">Login with google</a>
-    <a href="/auth/facebook">Login with facebook</a>
-    <a href="/auth/instagram">Login with instagram</a>
+    <div class="login-box">
+        <h1>LOGIN: Join PentasticMe</h1>
+        <form method="POST" action="/auth/login">
+            <div class="text-box">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="email" name="email" placeholder="Email" />
+            </div>
+            {{#if error.email}}
+            <div class="error">
+                <span>{{error.email}}</span>
+            </div>
+            {{/if}}
+            <div class="text-box">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" name="password" placeholder="Password" />
+            </div>
+            {{#if error.password}}
+            <div class="error">
+                <span>{{error.password}}</span>
+            </div>
+            {{/if}}
+            <input class="btn" type="submit" value="Login">
+        </form>
+        <div class="middle">
+            <a class="social-btn" href="/auth/google">
+                <i class="fa fa-google" aria-hidden="true"></i>
+            </a>
+            <a class="social-btn" href="/auth/facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="social-btn" href="/auth/instagram">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
 </body>
 
 </html>
