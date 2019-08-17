@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="/auth/login">
+        <input type="email" name="email" placeholder="Email" />
+        <br>
+        {{#if error.email}}
+        <div>{{error.email}}</div>
+        {{/if}}
+        <input type="password" name="password" placeholder="Password" />
+        <br>
+        {{#if error.password}}
+        <div>{{error.password}}</div>
+        {{/if}}
+        <input type="submit">
+    </form>
+    <a href="/auth/google">Login with google</a>
+    <a href="/auth/facebook">Login with facebook</a>
+    <a href="/auth/instagram">Login with instagram</a>
+</body>
+
+</html>
