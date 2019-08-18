@@ -14,8 +14,8 @@
         <h1>LOGIN: Join PentasticMe</h1>
         <form method="POST" action="/auth/login">
             <div class="text-box">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <input type="email" name="email" placeholder="Email" />
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <input type="email" name="email" placeholder="Email Address" />
             </div>
             {{#if error.email}}
             <div class="error">
@@ -33,6 +33,7 @@
             {{/if}}
             <input class="btn" type="submit" value="Login">
         </form>
+        <span>You may also try login with:</span>
         <div class="middle">
             <a class="social-btn" href="/auth/google">
                 <i class="fa fa-google" aria-hidden="true"></i>
@@ -43,6 +44,10 @@
             <a class="social-btn" href="/auth/instagram">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
+        </div>
+        <div class="account">
+            Don't have an account?
+            <a href="/auth/signup">SIGN UP NOW</a>
         </div>
     </div>
 

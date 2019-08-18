@@ -6,33 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="/style/login.css">
 </head>
 
 <body>
-  <h1>Signup</h1>
-  <form action="/auth/signup" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <br>
-    {{#if errors.name}}
-    <div>{{errors.name}}</div>
-    {{/if}}
-    <input type="email" name="email" placeholder="Email">
-    <br>
-    {{#if errors.email}}
-    <div>{{errors.email}}</div>
-    {{/if}}
-    <input type="password" name="password" placeholder="Password">
-    <br>
-    {{#if errors.password}}
-    <div>{{errors.password}}</div>
-    {{/if}}
-    <input type="password" name="passwordAgain" placeholder="Enter password again">
-    <br>
-    {{#if errors.matchPassword}}
-    <div>{{errors.matchPassword}}</div>
-    {{/if}}
-    <input type="submit">
-  </form>
+  <div class="login-box">
+    <h1>SIGNUP: Get Access to more Features</h1>
+    <form action="/auth/signup" method="POST">
+      <div class="text-box">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input type="text" name="username" placeholder="Username">
+      </div>
+      {{#if errors.name}}
+      <div class="error">
+        <span>{{errors.name}}</span>
+      </div>
+      {{/if}}
+      <div class="text-box">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input type="email" name="email" placeholder="Email">
+      </div>
+      {{#if errors.email}}
+      <div class="error">
+        <span>{{errors.email}}</span>
+      </div>
+      {{/if}}
+      <div class="text-box">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" name="password" placeholder="Password">
+      </div>
+      {{#if errors.password}}
+      <div class="error">
+        <span>{{errors.password}}</span>
+      </div>
+      {{/if}}
+      <div class="text-box">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" name="passwordAgain" placeholder="Enter password again">
+      </div>
+      {{#if errors.matchPassword}}
+      <div class="error">
+        <span>{{errors.matchPassword}}</span>
+      </div>
+      {{/if}}
+      <input class="btn" type="submit" value="Signup">
+    </form>
+    <div class="account">Already have an account?
+      <a href="/auth/login">LOGIN NOW</a>
+    </div>
+  </div>
 </body>
 
 </html>

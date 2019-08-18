@@ -6,38 +6,39 @@ body {
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
   background: #e9f5fd;
-  /* background: url("../bg.jpg") no-repeat; */
-  /* background-size: cover; */
+  /* background: url("../bg.jpeg") no-repeat;
+  background-size: cover; */
 }
 
 .login-box {
   width: 80%;
   max-width: 360px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background: #f3f9fd;
   box-shadow: 0 5px 15px -5px #4a9fd8;
   border-radius: 5%;
   padding: 4%;
-  transform: translate(-50%, -50%);
   color: #76c8ff;
   text-align: center;
 }
 
 @media (max-width: 992px) {
+  body {
+    background-size: auto;
+  }
   .login-box {
     padding: 6%;
   }
 }
 
 .login-box h1 {
+  color: #f07816;
   float: left;
   display: block;
-  font-size: 25px;
-  border-bottom: 3px solid #71bbec;
-  /* font-family: Nunito-sans; */
-  /* border-radius: 5%;   */
+  font-size: 1.2em;
+  border-bottom: 3px solid #f07816;
   margin-bottom: 50px;
   padding: 13px 0;
 }
@@ -71,24 +72,24 @@ body {
 .btn {
   width: 50%;
   height: 50px;
-  background-image: radial-gradient(white, #a1d2f3);
-  /* border: 2px solid #3498db; */
+  background-image: linear-gradient(to right, #3498db, #ff7300);
   border: none;
   border-radius: 50rem;
-  color: #3498db;
+  color: white;
   padding: 5px;
   font-size: 19px;
   cursor: pointer;
-  margin: 30px 0;
+  margin: 30px 0 2em 0;
 }
 
 .btn:hover {
-  box-shadow: 0 5px 15px -5px #75c4f8;
+  box-shadow: 0 5px 15px -5px #f0b27f;
 }
 
 .middle {
   width: 100%;
   text-align: center;
+  margin: 8px 0 2em 0;
 }
 
 .social-btn {
@@ -99,7 +100,7 @@ body {
   margin: 10px;
   border-radius: 30%;
   box-shadow: 0 5px 15px -5px #75c4f8;
-  color: #3498db;
+  color: #f07816;
   overflow: hidden;
   position: relative;
 }
@@ -120,7 +121,7 @@ body {
   position: absolute;
   width: 120%;
   height: 120%;
-  background: #3498db;
+  background: #f07816;
   transform: rotate(45deg);
   left: -110%;
   top: 90%;
@@ -157,4 +158,13 @@ body {
   border: 1px solid #f0acb9;
   border-radius: 5px;
   margin-bottom: 15px;
+}
+
+.account a {
+  color: #f07816;
+  text-decoration: none;
+}
+
+.account a:active {
+  color: #f07816;
 }
