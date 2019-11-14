@@ -9,6 +9,8 @@ const config = require("./config.prod");
 
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, "public")));
@@ -21,8 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
-    keys: [config.session.cookieKey],
-  }),
+    keys: [config.session.cookieKey]
+  })
 );
 
 app.use(passport.initialize());
@@ -45,7 +47,7 @@ app.get("/logout", (req, res) => {
     res.redirect("/");
   } catch (err) {
     res.status(500).send({
-      message: "Internal Server Error",
+      message: "Internal Server Error"
     });
   }
 });
@@ -53,8 +55,8 @@ app.get("/logout", (req, res) => {
 mongoose
   .connect(config.mongodb.URI, { useNewUrlParser: true })
   .then(() => {
-    app.listen("5000", () => {
-      console.log("server started at http://localhost:5000");
+    app.listen(PORT, () => {
+      console.log(`server started at http://localhost:${PORT}`);
     });
   })
   .catch(() => {
