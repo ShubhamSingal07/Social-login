@@ -1,4 +1,5 @@
 const path = require("path");
+const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -7,6 +8,8 @@ const passport = require("./passport/passporthandler");
 const config = require("./config.prod");
 
 const app = express();
+
+app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, "public")));
 
@@ -33,6 +36,17 @@ app.get("/", (req, res) => {
     res.redirect("http://localhost:3000/?id=" + req.user.id);
   } else {
     res.redirect("/auth/login");
+  }
+});
+
+app.get("/logout", (req, res) => {
+  try {
+    req.logout();
+    res.redirect("/");
+  } catch (err) {
+    res.status(500).send({
+      message: "Internal Server Error",
+    });
   }
 });
 

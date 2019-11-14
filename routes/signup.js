@@ -20,11 +20,16 @@ route.post("/", async (req, res) => {
     if (validEmail.valid && validName.valid && validPassword.valid && matchPassword.valid) {
       const user = await User.findOne({ email, strategy: "Local" });
       if (!user) {
+        let role = "Reader";
+        if (email === "singalshubham312@gmail.com") {
+          role = "Admin";
+        }
         const newUser = await new User({
           email,
           username,
           password,
           strategy: "Local",
+          role,
         }).save();
         if (!newUser) throw new Error("Error creating user");
 
